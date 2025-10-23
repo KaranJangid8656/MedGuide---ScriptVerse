@@ -293,22 +293,54 @@ const DIAGNOSIS_DATABASE: Record<string, DiagnosisResult[]> = {
       probability: 65,
       description: "General viral infection",
     },
+    {
+      condition: "Urinary Tract Infection",
+      probability: 55,
+      description: "Bacterial infection causing fever",
+    },
   ],
-  Cough: [
+  "Cough (dry)": [
     {
       condition: "Common Cold",
-      probability: 70,
-      description: "Viral infection affecting respiratory tract",
+      probability: 75,
+      description: "Viral infection causing dry cough",
     },
     {
-      condition: "Bronchitis",
-      probability: 65,
-      description: "Inflammation of bronchial tubes",
+      condition: "Allergies",
+      probability: 70,
+      description: "Allergic reaction causing dry cough",
     },
     {
       condition: "Asthma",
-      probability: 55,
-      description: "Chronic respiratory condition",
+      probability: 65,
+      description: "Chronic condition with dry cough",
+    },
+    {
+      condition: "Acid Reflux",
+      probability: 60,
+      description: "GERD causing throat irritation and dry cough",
+    },
+  ],
+  "Cough (wet)": [
+    {
+      condition: "Bronchitis",
+      probability: 80,
+      description: "Inflammation of bronchial tubes with mucus",
+    },
+    {
+      condition: "Pneumonia",
+      probability: 75,
+      description: "Lung infection causing productive cough",
+    },
+    {
+      condition: "Common Cold",
+      probability: 65,
+      description: "Viral infection with chest congestion",
+    },
+    {
+      condition: "Post-nasal Drip",
+      probability: 60,
+      description: "Mucus drainage causing wet cough",
     },
   ],
   "Sore Throat": [
@@ -341,8 +373,13 @@ const DIAGNOSIS_DATABASE: Record<string, DiagnosisResult[]> = {
     },
     {
       condition: "Dehydration",
-      probability: 50,
+      probability: 55,
       description: "Headache from lack of fluids",
+    },
+    {
+      condition: "Eye Strain",
+      probability: 50,
+      description: "Headache from eye fatigue",
     },
   ],
   "Stomach Pain": [
@@ -394,6 +431,225 @@ const DIAGNOSIS_DATABASE: Record<string, DiagnosisResult[]> = {
       condition: "Urticaria (Hives)",
       probability: 65,
       description: "Raised itchy welts on skin",
+    },
+  ],
+  Fatigue: [
+    {
+      condition: "Anemia",
+      probability: 70,
+      description: "Low red blood cell count",
+    },
+    {
+      condition: "Chronic Fatigue Syndrome",
+      probability: 65,
+      description: "Persistent tiredness",
+    },
+    {
+      condition: "Depression",
+      probability: 60,
+      description: "Mental health condition",
+    },
+    {
+      condition: "Hypothyroidism",
+      probability: 55,
+      description: "Underactive thyroid",
+    },
+  ],
+  "Joint Pain": [
+    {
+      condition: "Arthritis",
+      probability: 75,
+      description: "Joint inflammation",
+    },
+    {
+      condition: "Injury",
+      probability: 60,
+      description: "Physical trauma to joint",
+    },
+    {
+      condition: "Gout",
+      probability: 55,
+      description: "Crystal buildup in joints",
+    },
+  ],
+  "Muscle Pain": [
+    {
+      condition: "Muscle Strain",
+      probability: 70,
+      description: "Overuse or injury",
+    },
+    {
+      condition: "Fibromyalgia",
+      probability: 60,
+      description: "Chronic muscle pain",
+    },
+    {
+      condition: "Viral Infection",
+      probability: 55,
+      description: "Body aches from infection",
+    },
+  ],
+  Nausea: [
+    {
+      condition: "Gastroenteritis",
+      probability: 75,
+      description: "Stomach infection",
+    },
+    {
+      condition: "Migraine",
+      probability: 65,
+      description: "Severe headache with nausea",
+    },
+    {
+      condition: "Motion Sickness",
+      probability: 60,
+      description: "Travel-related nausea",
+    },
+    {
+      condition: "Pregnancy",
+      probability: 55,
+      description: "Morning sickness",
+    },
+  ],
+  "Shortness of Breath": [
+    {
+      condition: "Asthma",
+      probability: 75,
+      description: "Chronic respiratory condition",
+    },
+    {
+      condition: "Anxiety Attack",
+      probability: 65,
+      description: "Panic-related breathing difficulty",
+    },
+    {
+      condition: "Anemia",
+      probability: 55,
+      description: "Low oxygen-carrying capacity",
+    },
+  ],
+  Dizziness: [
+    {
+      condition: "Vertigo",
+      probability: 70,
+      description: "Spinning sensation",
+    },
+    {
+      condition: "Low Blood Pressure",
+      probability: 65,
+      description: "Reduced blood flow to brain",
+    },
+    {
+      condition: "Dehydration",
+      probability: 60,
+      description: "Fluid imbalance",
+    },
+    {
+      condition: "Anemia",
+      probability: 55,
+      description: "Low red blood cells",
+    },
+  ],
+  "Blurred Vision": [
+    {
+      condition: "Eye Strain",
+      probability: 70,
+      description: "Tired eyes from screen use",
+    },
+    {
+      condition: "Refractive Error",
+      probability: 60,
+      description: "Need for glasses/contact lenses",
+    },
+    {
+      condition: "Diabetes",
+      probability: 55,
+      description: "High blood sugar affecting eyes",
+    },
+  ],
+  "Chest Pain": [
+    {
+      condition: "Anxiety Attack",
+      probability: 65,
+      description: "Stress-related chest discomfort",
+    },
+    {
+      condition: "Heartburn",
+      probability: 60,
+      description: "Acid reflux",
+    },
+    {
+      condition: "Muscle Strain",
+      probability: 55,
+      description: "Chest muscle injury",
+    },
+  ],
+  "Back Pain": [
+    {
+      condition: "Muscle Strain",
+      probability: 70,
+      description: "Back muscle injury",
+    },
+    {
+      condition: "Poor Posture",
+      probability: 65,
+      description: "Postural misalignment",
+    },
+    {
+      condition: "Arthritis",
+      probability: 60,
+      description: "Spinal joint inflammation",
+    },
+  ],
+  "Loss of Appetite": [
+    {
+      condition: "Depression",
+      probability: 70,
+      description: "Mental health affecting eating",
+    },
+    {
+      condition: "Gastroenteritis",
+      probability: 65,
+      description: "Stomach infection",
+    },
+    {
+      condition: "Anxiety",
+      probability: 60,
+      description: "Stress affecting appetite",
+    },
+  ],
+  "Weight Loss": [
+    {
+      condition: "Diabetes",
+      probability: 65,
+      description: "Uncontrolled blood sugar",
+    },
+    {
+      condition: "Hyperthyroidism",
+      probability: 60,
+      description: "Overactive thyroid",
+    },
+    {
+      condition: "Depression",
+      probability: 55,
+      description: "Mental health condition",
+    },
+  ],
+  "Sleep Issues": [
+    {
+      condition: "Insomnia",
+      probability: 75,
+      description: "Difficulty falling asleep",
+    },
+    {
+      condition: "Stress",
+      probability: 65,
+      description: "Anxiety affecting sleep",
+    },
+    {
+      condition: "Sleep Apnea",
+      probability: 60,
+      description: "Breathing disorder during sleep",
     },
   ],
   // Additional common combinations
@@ -1442,6 +1698,940 @@ const TREATMENT_DATABASE: Record<string, Treatment> = {
       "Don't skip meals",
     ],
   },
+  Allergies: {
+    medicines: [
+      {
+        name: "Cetirizine",
+        dosage: "10mg",
+        frequency: "Once daily",
+        duration: "As needed",
+        sideEffects: "Drowsiness, dry mouth",
+      },
+      {
+        name: "Loratadine",
+        dosage: "10mg",
+        frequency: "Once daily",
+        duration: "As needed",
+        sideEffects: "Minimal side effects",
+      },
+      {
+        name: "Fexofenadine",
+        dosage: "180mg",
+        frequency: "Once daily",
+        duration: "As needed",
+        sideEffects: "Rare, generally well-tolerated",
+      },
+      {
+        name: "Fluticasone Nasal Spray",
+        dosage: "2 sprays per nostril",
+        frequency: "Once daily",
+        duration: "As needed",
+        sideEffects: "Nasal irritation, nosebleeds",
+      },
+    ],
+    homeRemedies: [
+      "Use air purifiers",
+      "Keep windows closed during high pollen",
+      "Shower after being outdoors",
+      "Use allergen-proof bedding",
+      "Avoid outdoor activities during peak pollen",
+      "Keep indoor humidity low",
+      "Regular vacuuming with HEPA filter",
+    ],
+    precautions: [
+      "Identify and avoid specific allergens",
+      "Keep emergency medications available",
+      "Monitor weather and pollen counts",
+      "Use protective clothing outdoors",
+      "Maintain clean indoor environment",
+      "Avoid smoking and secondhand smoke",
+      "Get allergy testing if symptoms persist",
+      "Carry epinephrine auto-injector if severe",
+    ],
+    dos: [
+      "Do identify your triggers",
+      "Do take medications as prescribed",
+      "Do keep environment clean",
+      "Do use air filtration",
+      "Do shower after outdoor exposure",
+    ],
+    donts: [
+      "Don't ignore symptoms",
+      "Don't expose yourself to known allergens",
+      "Don't skip medications during allergy season",
+      "Don't use outdated medications",
+      "Don't rely only on home remedies for severe allergies",
+    ],
+  },
+  "Acid Reflux": {
+    medicines: [
+      {
+        name: "Omeprazole",
+        dosage: "20mg",
+        frequency: "Once daily",
+        duration: "4-8 weeks",
+        sideEffects: "Headache, diarrhea, abdominal pain",
+      },
+      {
+        name: "Ranitidine",
+        dosage: "150mg",
+        frequency: "Twice daily",
+        duration: "As needed",
+        sideEffects: "Headache, dizziness, constipation",
+      },
+      {
+        name: "Antacids (Calcium Carbonate)",
+        dosage: "500-1000mg",
+        frequency: "As needed",
+        duration: "Until symptoms resolve",
+        sideEffects: "Constipation, gas",
+      },
+      {
+        name: "Gaviscon",
+        dosage: "1-2 tablets",
+        frequency: "After meals and bedtime",
+        duration: "As needed",
+        sideEffects: "Mild constipation",
+      },
+    ],
+    homeRemedies: [
+      "Eat smaller, more frequent meals",
+      "Avoid lying down after eating (wait 3 hours)",
+      "Elevate head of bed (6-8 inches)",
+      "Avoid trigger foods (spicy, fatty, acidic)",
+      "Chew gum to increase saliva",
+      "Drink ginger tea",
+      "Eat slowly and chew thoroughly",
+    ],
+    precautions: [
+      "Avoid eating 3 hours before bedtime",
+      "Maintain healthy weight",
+      "Avoid tight clothing around waist",
+      "Limit alcohol and caffeine",
+      "Stop smoking",
+      "Monitor symptoms and triggers",
+      "Seek medical help if symptoms worsen",
+      "Consider dietary changes",
+    ],
+    dos: [
+      "Do eat smaller meals",
+      "Do elevate head while sleeping",
+      "Do avoid trigger foods",
+      "Do maintain healthy weight",
+      "Do eat slowly",
+    ],
+    donts: [
+      "Don't lie down after eating",
+      "Don't eat large meals",
+      "Don't consume trigger foods",
+      "Don't wear tight clothing",
+      "Don't ignore persistent symptoms",
+    ],
+  },
+  "COVID-19": {
+    medicines: [
+      {
+        name: "Paracetamol",
+        dosage: "500mg",
+        frequency: "Every 6-8 hours",
+        duration: "5-7 days",
+        sideEffects: "Rare, generally well-tolerated",
+      },
+      {
+        name: "Vitamin D Supplements",
+        dosage: "2000 IU",
+        frequency: "Daily",
+        duration: "During illness",
+        sideEffects: "Generally safe",
+      },
+    ],
+    homeRemedies: [
+      "Complete isolation for 10-14 days",
+      "Drink plenty of fluids",
+      "Rest and sleep adequately",
+      "Monitor oxygen levels",
+      "Steam inhalation",
+      "Warm soup and broths",
+      "Vitamin C rich foods",
+    ],
+    precautions: [
+      "Quarantine for 14 days",
+      "Wear mask at all times",
+      "Monitor symptoms closely",
+      "Seek emergency care if breathing worsens",
+      "Maintain social distancing",
+      "Disinfect surfaces regularly",
+      "Get vaccinated when available",
+      "Follow public health guidelines",
+    ],
+    dos: [
+      "Do isolate immediately",
+      "Do monitor symptoms",
+      "Do stay hydrated",
+      "Do rest adequately",
+      "Do seek medical help if needed",
+    ],
+    donts: [
+      "Don't go out in public",
+      "Don't share personal items",
+      "Don't ignore worsening symptoms",
+      "Don't self-medicate",
+      "Don't panic",
+    ],
+  },
+  "Anemia": {
+    medicines: [
+      {
+        name: "Iron Supplements",
+        dosage: "65mg",
+        frequency: "Once daily",
+        duration: "3-6 months",
+        sideEffects: "Constipation, stomach upset",
+      },
+      {
+        name: "Vitamin B12",
+        dosage: "1000mcg",
+        frequency: "Daily",
+        duration: "As prescribed",
+        sideEffects: "Generally safe",
+      },
+      {
+        name: "Folic Acid",
+        dosage: "400mcg",
+        frequency: "Daily",
+        duration: "As prescribed",
+        sideEffects: "Rare side effects",
+      },
+    ],
+    homeRemedies: [
+      "Iron-rich foods (red meat, spinach, beans)",
+      "Vitamin C with meals to enhance iron absorption",
+      "Avoid tea/coffee with meals",
+      "Regular exercise",
+      "Adequate sleep",
+      "Stress management",
+    ],
+    precautions: [
+      "Get regular blood tests",
+      "Monitor hemoglobin levels",
+      "Take iron with vitamin C",
+      "Avoid calcium supplements with iron",
+      "Maintain healthy diet",
+      "Get adequate rest",
+      "Manage underlying conditions",
+    ],
+    dos: [
+      "Do eat iron-rich foods",
+      "Do take supplements as prescribed",
+      "Do exercise regularly",
+      "Do get regular checkups",
+      "Do manage stress",
+    ],
+    donts: [
+      "Don't ignore fatigue",
+      "Don't skip meals",
+      "Don't drink tea/coffee with iron",
+      "Don't take calcium with iron",
+      "Don't self-diagnose",
+    ],
+  },
+  "Depression": {
+    medicines: [
+      {
+        name: "Sertraline",
+        dosage: "50mg",
+        frequency: "Once daily",
+        duration: "6-12 months",
+        sideEffects: "Nausea, insomnia, sexual dysfunction",
+      },
+      {
+        name: "Escitalopram",
+        dosage: "10mg",
+        frequency: "Once daily",
+        duration: "6-12 months",
+        sideEffects: "Nausea, fatigue, anxiety",
+      },
+    ],
+    homeRemedies: [
+      "Regular exercise (30 minutes daily)",
+      "Healthy diet with omega-3 fatty acids",
+      "Adequate sleep (7-9 hours)",
+      "Social connections and support",
+      "Mindfulness and meditation",
+      "Journaling",
+      "Sunlight exposure",
+    ],
+    precautions: [
+      "Seek professional mental health support",
+      "Monitor for suicidal thoughts",
+      "Avoid alcohol and drugs",
+      "Maintain medication schedule",
+      "Regular therapy sessions",
+      "Build support network",
+      "Set realistic goals",
+      "Practice self-care",
+    ],
+    dos: [
+      "Do seek professional help",
+      "Do exercise regularly",
+      "Do maintain social connections",
+      "Do practice mindfulness",
+      "Do get adequate sleep",
+    ],
+    donts: [
+      "Don't isolate yourself",
+      "Don't use alcohol to cope",
+      "Don't ignore symptoms",
+      "Don't stop medication abruptly",
+      "Don't neglect self-care",
+    ],
+  },
+  "Anxiety": {
+    medicines: [
+      {
+        name: "Alprazolam",
+        dosage: "0.25-0.5mg",
+        frequency: "As needed",
+        duration: "Short-term",
+        sideEffects: "Drowsiness, confusion, dependence",
+      },
+      {
+        name: "Sertraline",
+        dosage: "50mg",
+        frequency: "Once daily",
+        duration: "Long-term",
+        sideEffects: "Nausea, insomnia, sexual dysfunction",
+      },
+    ],
+    homeRemedies: [
+      "Deep breathing exercises",
+      "Progressive muscle relaxation",
+      "Regular exercise",
+      "Healthy sleep habits",
+      "Balanced diet",
+      "Limiting caffeine",
+      "Journaling",
+    ],
+    precautions: [
+      "Seek professional mental health support",
+      "Avoid alcohol and sedatives",
+      "Monitor anxiety triggers",
+      "Practice stress management",
+      "Maintain medication schedule",
+      "Build coping strategies",
+      "Get regular checkups",
+    ],
+    dos: [
+      "Do practice relaxation techniques",
+      "Do exercise regularly",
+      "Do maintain healthy lifestyle",
+      "Do seek professional help",
+      "Do identify triggers",
+    ],
+    donts: [
+      "Don't avoid anxiety-provoking situations",
+      "Don't use alcohol to cope",
+      "Don't ignore symptoms",
+      "Don't stop medication abruptly",
+      "Don't isolate yourself",
+    ],
+  },
+  "Insomnia": {
+    medicines: [
+      {
+        name: "Melatonin",
+        dosage: "3-5mg",
+        frequency: "30 minutes before bed",
+        duration: "Short-term",
+        sideEffects: "Drowsiness, headache",
+      },
+      {
+        name: "Zolpidem",
+        dosage: "5-10mg",
+        frequency: "At bedtime",
+        duration: "Short-term",
+        sideEffects: "Drowsiness, dizziness, dependence",
+      },
+    ],
+    homeRemedies: [
+      "Maintain consistent sleep schedule",
+      "Create relaxing bedtime routine",
+      "Keep bedroom cool and dark",
+      "Avoid screens 1 hour before bed",
+      "Limit caffeine after noon",
+      "Regular exercise (not before bed)",
+      "Relaxation techniques",
+    ],
+    precautions: [
+      "Establish good sleep hygiene",
+      "Avoid daytime napping",
+      "Limit alcohol and caffeine",
+      "Create sleep-conducive environment",
+      "Manage stress effectively",
+      "Get regular exercise",
+      "Avoid heavy meals before bed",
+    ],
+    dos: [
+      "Do maintain sleep schedule",
+      "Do create bedtime routine",
+      "Do exercise regularly",
+      "Do limit caffeine",
+      "Do relax before bed",
+    ],
+    donts: [
+      "Don't use screens in bed",
+      "Don't nap during day",
+      "Don't consume caffeine late",
+      "Don't eat heavy meals late",
+      "Don't worry about sleep",
+    ],
+  },
+  "Pneumonia": {
+    medicines: [
+      {
+        name: "Amoxicillin",
+        dosage: "500mg",
+        frequency: "Three times daily",
+        duration: "7-10 days",
+        sideEffects: "Nausea, diarrhea, rash",
+      },
+      {
+        name: "Azithromycin",
+        dosage: "500mg",
+        frequency: "Once daily",
+        duration: "3-5 days",
+        sideEffects: "Nausea, diarrhea, abdominal pain",
+      },
+    ],
+    homeRemedies: [
+      "Complete bed rest",
+      "Stay well hydrated",
+      "Use humidifier",
+      "Gargle with salt water",
+      "Elevate head while sleeping",
+      "Avoid smoke and pollution",
+      "Nutritious diet",
+    ],
+    precautions: [
+      "Complete full course of antibiotics",
+      "Monitor temperature regularly",
+      "Get plenty of rest",
+      "Avoid contact with others",
+      "Watch for worsening symptoms",
+      "Get vaccinated against pneumonia",
+      "Maintain good hygiene",
+    ],
+    dos: [
+      "Do complete antibiotic course",
+      "Do rest adequately",
+      "Do stay hydrated",
+      "Do monitor symptoms",
+      "Do seek medical help if worsens",
+    ],
+    donts: [
+      "Don't stop antibiotics early",
+      "Don't go to work or school",
+      "Don't ignore chest pain",
+      "Don't smoke",
+      "Don't delay treatment",
+    ],
+  },
+  "Heartburn": {
+    medicines: [
+      {
+        name: "Omeprazole",
+        dosage: "20mg",
+        frequency: "Once daily",
+        duration: "4-8 weeks",
+        sideEffects: "Headache, diarrhea, abdominal pain",
+      },
+      {
+        name: "Antacids",
+        dosage: "As needed",
+        frequency: "After meals",
+        duration: "Until symptoms resolve",
+        sideEffects: "Constipation, gas",
+      },
+    ],
+    homeRemedies: [
+      "Eat smaller meals",
+      "Avoid lying down after eating",
+      "Elevate head of bed",
+      "Avoid trigger foods",
+      "Chew gum after meals",
+      "Drink ginger tea",
+      "Eat slowly",
+    ],
+    precautions: [
+      "Avoid eating before bedtime",
+      "Maintain healthy weight",
+      "Avoid tight clothing",
+      "Limit alcohol and caffeine",
+      "Stop smoking",
+      "Monitor symptoms",
+      "Seek medical help if persistent",
+    ],
+    dos: [
+      "Do eat smaller meals",
+      "Do elevate head while sleeping",
+      "Do avoid trigger foods",
+      "Do maintain healthy weight",
+      "Do eat slowly",
+    ],
+    donts: [
+      "Don't lie down after eating",
+      "Don't eat large meals",
+      "Don't consume trigger foods",
+      "Don't wear tight clothing",
+      "Don't ignore persistent symptoms",
+    ],
+  },
+  "Muscle Strain": {
+    medicines: [
+      {
+        name: "Ibuprofen",
+        dosage: "400mg",
+        frequency: "Every 6-8 hours",
+        duration: "3-5 days",
+        sideEffects: "Stomach upset, take with food",
+      },
+      {
+        name: "Paracetamol",
+        dosage: "500mg",
+        frequency: "Every 6-8 hours",
+        duration: "3-5 days",
+        sideEffects: "Rare, generally well-tolerated",
+      },
+    ],
+    homeRemedies: [
+      "Rest the affected muscle",
+      "Apply ice for 15-20 minutes",
+      "Use compression bandage",
+      "Elevate the injured area",
+      "Gentle stretching after 48 hours",
+      "Warm compress after 72 hours",
+      "Massage therapy",
+    ],
+    precautions: [
+      "Avoid activities that cause pain",
+      "Use proper form during exercise",
+      "Warm up before physical activity",
+      "Strengthen supporting muscles",
+      "Maintain flexibility",
+      "Get adequate rest",
+      "Seek medical help if no improvement",
+    ],
+    dos: [
+      "Do rest the injured area",
+      "Do apply ice initially",
+      "Do use compression",
+      "Do elevate when possible",
+      "Do gentle stretching later",
+    ],
+    donts: [
+      "Don't continue painful activities",
+      "Don't apply heat initially",
+      "Don't ignore severe pain",
+      "Don't delay treatment",
+      "Don't overstretch",
+    ],
+  },
+  "Post-nasal Drip": {
+    medicines: [
+      {
+        name: "Guaifenesin",
+        dosage: "200-400mg",
+        frequency: "Every 4 hours",
+        duration: "Until resolved",
+        sideEffects: "Nausea, vomiting",
+      },
+      {
+        name: "Fluticasone Nasal Spray",
+        dosage: "2 sprays per nostril",
+        frequency: "Once daily",
+        duration: "As needed",
+        sideEffects: "Nasal irritation, nosebleeds",
+      },
+    ],
+    homeRemedies: [
+      "Use humidifier",
+      "Stay hydrated",
+      "Gargle with salt water",
+      "Use saline nasal spray",
+      "Elevate head while sleeping",
+      "Avoid irritants",
+      "Steam inhalation",
+    ],
+    precautions: [
+      "Avoid allergens",
+      "Keep indoor air clean",
+      "Use air purifier",
+      "Avoid smoke and pollution",
+      "Maintain good hygiene",
+      "Monitor symptoms",
+      "Seek medical help if persistent",
+    ],
+    dos: [
+      "Do use humidifier",
+      "Do stay hydrated",
+      "Do use nasal spray",
+      "Do avoid irritants",
+      "Do elevate head",
+    ],
+    donts: [
+      "Don't ignore persistent symptoms",
+      "Don't expose to smoke",
+      "Don't use decongestants long-term",
+      "Don't delay treatment",
+      "Don't ignore allergies",
+    ],
+  },
+  "Motion Sickness": {
+    medicines: [
+      {
+        name: "Dimenhydrinate",
+        dosage: "50mg",
+        frequency: "Every 4-6 hours",
+        duration: "As needed",
+        sideEffects: "Drowsiness, dry mouth",
+      },
+      {
+        name: "Meclizine",
+        dosage: "25mg",
+        frequency: "1 hour before travel",
+        duration: "As needed",
+        sideEffects: "Drowsiness, dry mouth",
+      },
+    ],
+    homeRemedies: [
+      "Sit in front seat during travel",
+      "Keep eyes on horizon",
+      "Get fresh air",
+      "Ginger tea or supplements",
+      "Acupressure bands",
+      "Avoid heavy meals before travel",
+      "Stay hydrated",
+    ],
+    precautions: [
+      "Plan travel carefully",
+      "Avoid reading during travel",
+      "Take medication before symptoms start",
+      "Choose less bumpy routes",
+      "Avoid alcohol before travel",
+      "Get adequate rest",
+      "Monitor for dehydration",
+    ],
+    dos: [
+      "Do take medication early",
+      "Do sit in front seat",
+      "Do look at horizon",
+      "Do get fresh air",
+      "Do use ginger",
+    ],
+    donts: [
+      "Don't read during travel",
+      "Don't sit in back seat",
+      "Don't eat heavy meals",
+      "Don't consume alcohol",
+      "Don't ignore symptoms",
+    ],
+  },
+  "Strep Throat": {
+    medicines: [
+      {
+        name: "Amoxicillin",
+        dosage: "500mg",
+        frequency: "Three times daily",
+        duration: "10 days",
+        sideEffects: "Nausea, diarrhea, rash",
+      },
+      {
+        name: "Penicillin",
+        dosage: "500mg",
+        frequency: "Four times daily",
+        duration: "10 days",
+        sideEffects: "Nausea, vomiting, diarrhea",
+      },
+    ],
+    homeRemedies: [
+      "Gargle with warm salt water",
+      "Drink warm fluids (tea, soup)",
+      "Use throat lozenges",
+      "Get plenty of rest",
+      "Stay hydrated",
+      "Avoid irritants (smoke, pollution)",
+    ],
+    precautions: [
+      "Complete full course of antibiotics",
+      "Avoid close contact with others",
+      "Wash hands frequently",
+      "Avoid sharing utensils",
+      "Monitor for complications",
+      "Get plenty of rest",
+      "Stay hydrated",
+    ],
+    dos: [
+      "Do complete antibiotic course",
+      "Do rest adequately",
+      "Do stay hydrated",
+      "Do gargle with salt water",
+      "Do isolate from others",
+    ],
+    donts: [
+      "Don't stop antibiotics early",
+      "Don't share personal items",
+      "Don't go to work or school",
+      "Don't ignore severe pain",
+      "Don't delay treatment",
+    ],
+  },
+  "Food Poisoning": {
+    medicines: [
+      {
+        name: "Oral Rehydration Solution",
+        dosage: "As directed",
+        frequency: "Frequently",
+        duration: "Until hydrated",
+        sideEffects: "None when used properly",
+      },
+      {
+        name: "Loperamide",
+        dosage: "2mg",
+        frequency: "After loose stool",
+        duration: "Until symptoms resolve",
+        sideEffects: "Constipation if overused",
+      },
+    ],
+    homeRemedies: [
+      "Stay well hydrated",
+      "Eat bland foods (rice, bananas, toast)",
+      "Small, frequent meals",
+      "Ginger tea",
+      "Rest adequately",
+      "Avoid dairy and fatty foods",
+    ],
+    precautions: [
+      "Monitor for dehydration signs",
+      "Avoid preparing food for others",
+      "Wash hands frequently",
+      "Clean contaminated surfaces",
+      "Seek medical help if severe",
+      "Get plenty of rest",
+      "Maintain hygiene",
+    ],
+    dos: [
+      "Do stay hydrated",
+      "Do eat bland foods",
+      "Do rest adequately",
+      "Do monitor symptoms",
+      "Do maintain hygiene",
+    ],
+    donts: [
+      "Don't eat contaminated food",
+      "Don't prepare food for others",
+      "Don't ignore severe symptoms",
+      "Don't use antibiotics without prescription",
+      "Don't delay medical care if needed",
+    ],
+  },
+  "Indigestion": {
+    medicines: [
+      {
+        name: "Antacids",
+        dosage: "As needed",
+        frequency: "After meals",
+        duration: "Until symptoms resolve",
+        sideEffects: "Constipation, gas",
+      },
+      {
+        name: "Simethicone",
+        dosage: "125mg",
+        frequency: "As needed",
+        duration: "Until symptoms resolve",
+        sideEffects: "Generally safe",
+      },
+    ],
+    homeRemedies: [
+      "Eat smaller, more frequent meals",
+      "Avoid lying down after eating",
+      "Drink peppermint tea",
+      "Chew food thoroughly",
+      "Avoid trigger foods",
+      "Stay upright after meals",
+    ],
+    precautions: [
+      "Identify and avoid trigger foods",
+      "Eat slowly and chew thoroughly",
+      "Avoid eating before bedtime",
+      "Maintain healthy weight",
+      "Limit alcohol and caffeine",
+      "Manage stress",
+    ],
+    dos: [
+      "Do eat smaller meals",
+      "Do chew food thoroughly",
+      "Do avoid trigger foods",
+      "Do maintain healthy weight",
+      "Do manage stress",
+    ],
+    donts: [
+      "Don't eat large meals",
+      "Don't lie down after eating",
+      "Don't consume trigger foods",
+      "Don't eat quickly",
+      "Don't ignore persistent symptoms",
+    ],
+  },
+  "Fibromyalgia": {
+    medicines: [
+      {
+        name: "Duloxetine",
+        dosage: "30-60mg",
+        frequency: "Once daily",
+        duration: "Long-term",
+        sideEffects: "Nausea, dry mouth, fatigue",
+      },
+      {
+        name: "Pregabalin",
+        dosage: "75-150mg",
+        frequency: "Twice daily",
+        duration: "Long-term",
+        sideEffects: "Dizziness, drowsiness, weight gain",
+      },
+    ],
+    homeRemedies: [
+      "Regular low-impact exercise",
+      "Stress management techniques",
+      "Adequate sleep hygiene",
+      "Hot and cold therapy",
+      "Massage therapy",
+      "Yoga and stretching",
+      "Balanced diet",
+    ],
+    precautions: [
+      "Start exercise gradually",
+      "Manage stress effectively",
+      "Maintain good sleep habits",
+      "Monitor symptoms",
+      "Regular medical checkups",
+      "Avoid overexertion",
+      "Build support network",
+    ],
+    dos: [
+      "Do exercise regularly",
+      "Do manage stress",
+      "Do get adequate sleep",
+      "Do practice relaxation",
+      "Do maintain healthy lifestyle",
+    ],
+    donts: [
+      "Don't overexert yourself",
+      "Don't ignore pain",
+      "Don't skip medications",
+      "Don't isolate yourself",
+      "Don't neglect mental health",
+    ],
+  },
+  "Chronic Fatigue Syndrome": {
+    medicines: [
+      {
+        name: "Cognitive Behavioral Therapy",
+        dosage: "As prescribed",
+        frequency: "Weekly sessions",
+        duration: "6-12 months",
+        sideEffects: "Temporary increase in symptoms",
+      },
+      {
+        name: "Graded Exercise Therapy",
+        dosage: "As prescribed",
+        frequency: "Guided program",
+        duration: "3-6 months",
+        sideEffects: "Temporary fatigue increase",
+      },
+    ],
+    homeRemedies: [
+      "Pace daily activities",
+      "Maintain consistent sleep schedule",
+      "Balanced nutrition",
+      "Stress management",
+      "Light exercise as tolerated",
+      "Social support",
+      "Relaxation techniques",
+    ],
+    precautions: [
+      "Work with healthcare providers",
+      "Monitor activity levels",
+      "Avoid overexertion",
+      "Manage stress effectively",
+      "Get regular medical care",
+      "Build support system",
+      "Track symptoms",
+    ],
+    dos: [
+      "Do pace activities",
+      "Do maintain sleep schedule",
+      "Do manage stress",
+      "Do get support",
+      "Do follow medical advice",
+    ],
+    donts: [
+      "Don't push through severe fatigue",
+      "Don't ignore symptoms",
+      "Don't overcommit",
+      "Don't isolate yourself",
+      "Don't self-diagnose",
+    ],
+  },
+  "Hypothyroidism": {
+    medicines: [
+      {
+        name: "Levothyroxine",
+        dosage: "25-150mcg",
+        frequency: "Once daily",
+        duration: "Long-term",
+        sideEffects: "Rare when dose is correct",
+      },
+      {
+        name: "Liothyronine",
+        dosage: "5-25mcg",
+        frequency: "Once daily",
+        duration: "As prescribed",
+        sideEffects: "Heart palpitations, anxiety",
+      },
+    ],
+    homeRemedies: [
+      "Balanced diet with iodine",
+      "Regular exercise",
+      "Stress management",
+      "Adequate sleep",
+      "Maintain healthy weight",
+      "Regular medical monitoring",
+      "Selenium-rich foods",
+    ],
+    precautions: [
+      "Take medication consistently",
+      "Regular blood tests",
+      "Monitor thyroid function",
+      "Maintain healthy lifestyle",
+      "Inform doctors of condition",
+      "Avoid certain supplements",
+      "Get regular checkups",
+    ],
+    dos: [
+      "Do take medication daily",
+      "Do get regular blood tests",
+      "Do maintain healthy lifestyle",
+      "Do monitor symptoms",
+      "Do follow medical advice",
+    ],
+    donts: [
+      "Don't skip medications",
+      "Don't take with certain supplements",
+      "Don't ignore symptoms",
+      "Don't self-adjust dose",
+      "Don't neglect follow-ups",
+    ],
+  },
 }
 
 interface Treatment {
@@ -1482,65 +2672,64 @@ export default function SymptomAnalyzer() {
 
     const selectedSymptomNames = selectedSymptoms.map((s) => s.name)
     const allResults: DiagnosisResult[] = []
+    const conditionScores = new Map<string, number>()
 
     // First, try exact match
     const exactKey = selectedSymptomNames.sort().join(",")
     if (DIAGNOSIS_DATABASE[exactKey]) {
-      setDiagnosisResults(DIAGNOSIS_DATABASE[exactKey])
-      setSelectedCondition(null)
-      // Scroll to results after a brief delay to allow DOM update
-      setTimeout(() => {
-        const resultsElement = document.getElementById('diagnosis-results')
-        if (resultsElement) {
-          resultsElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
-        }
-      }, 100)
-      return
+      DIAGNOSIS_DATABASE[exactKey].forEach(result => {
+        conditionScores.set(result.condition, result.probability)
+        allResults.push(result)
+      })
     }
 
-    // If no exact match, find partial matches
-    Object.entries(DIAGNOSIS_DATABASE).forEach(([key, results]) => {
-      const dbSymptoms = key.split(",")
-      const matchCount = selectedSymptomNames.filter((s) => dbSymptoms.includes(s)).length
+    // Always try single symptom matches for each selected symptom
+    selectedSymptomNames.forEach((symptom) => {
+      if (DIAGNOSIS_DATABASE[symptom]) {
+        DIAGNOSIS_DATABASE[symptom].forEach((result) => {
+          const currentScore = conditionScores.get(result.condition) || 0
+          const newScore = Math.max(currentScore, result.probability * 0.9)
+          conditionScores.set(result.condition, newScore)
 
-      if (matchCount > 0) {
-        results.forEach((result) => {
           const existingResult = allResults.find((r) => r.condition === result.condition)
           if (existingResult) {
-            existingResult.probability = Math.max(
-              existingResult.probability,
-              (result.probability * matchCount) / Math.max(selectedSymptomNames.length, dbSymptoms.length),
-            )
+            existingResult.probability = newScore
           } else {
             allResults.push({
               ...result,
-              probability: (result.probability * matchCount) / Math.max(selectedSymptomNames.length, dbSymptoms.length),
+              probability: newScore,
             })
           }
         })
       }
     })
 
-    // If still no results, try individual symptom matching
-    if (allResults.length === 0) {
-      selectedSymptomNames.forEach((symptom) => {
-        if (DIAGNOSIS_DATABASE[symptom]) {
-          DIAGNOSIS_DATABASE[symptom].forEach((result) => {
-            const existingResult = allResults.find((r) => r.condition === result.condition)
-            if (existingResult) {
-              existingResult.probability = Math.max(existingResult.probability, result.probability * 0.8)
-            } else {
-              allResults.push({
-                ...result,
-                probability: result.probability * 0.8,
-              })
-            }
-          })
-        }
-      })
-    }
+    // Add partial matches from combinations for additional diversity
+    Object.entries(DIAGNOSIS_DATABASE).forEach(([key, results]) => {
+      const dbSymptoms = key.split(",")
+      const matchCount = selectedSymptomNames.filter((s) => dbSymptoms.includes(s)).length
 
-    // Sort by probability and remove duplicates
+      if (matchCount > 0 && matchCount < dbSymptoms.length) {
+        results.forEach((result) => {
+          const currentScore = conditionScores.get(result.condition) || 0
+          const partialScore = (result.probability * matchCount) / dbSymptoms.length * 0.8
+          const newScore = Math.max(currentScore, partialScore)
+          conditionScores.set(result.condition, newScore)
+
+          const existingResult = allResults.find((r) => r.condition === result.condition)
+          if (existingResult) {
+            existingResult.probability = newScore
+          } else {
+            allResults.push({
+              ...result,
+              probability: newScore,
+            })
+          }
+        })
+      }
+    })
+
+    // Sort by probability and remove duplicates, ensuring diversity
     const uniqueResults = Array.from(new Map(allResults.map((r) => [r.condition, r])).values())
       .sort((a, b) => b.probability - a.probability)
       .slice(0, 6)
