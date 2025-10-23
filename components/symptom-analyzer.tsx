@@ -276,6 +276,7 @@ const DIAGNOSIS_DATABASE: Record<string, DiagnosisResult[]> = {
       description: "Autoimmune disease affecting joints",
     },
   ],
+  // Single symptom entries for better matching
   Fever: [
     {
       condition: "Common Cold",
@@ -393,6 +394,130 @@ const DIAGNOSIS_DATABASE: Record<string, DiagnosisResult[]> = {
       condition: "Urticaria (Hives)",
       probability: 65,
       description: "Raised itchy welts on skin",
+    },
+  ],
+  // Additional common combinations
+  "Headache,Nausea": [
+    {
+      condition: "Migraine",
+      probability: 75,
+      description: "Severe headache with nausea",
+    },
+    {
+      condition: "Tension Headache",
+      probability: 60,
+      description: "Headache with digestive upset",
+    },
+  ],
+  "Fatigue,Weakness": [
+    {
+      condition: "Anemia",
+      probability: 70,
+      description: "Low red blood cell count causing fatigue",
+    },
+    {
+      condition: "Chronic Fatigue Syndrome",
+      probability: 65,
+      description: "Persistent tiredness and weakness",
+    },
+    {
+      condition: "Viral Infection",
+      probability: 60,
+      description: "General viral infection with fatigue",
+    },
+  ],
+  "Nausea,Vomiting": [
+    {
+      condition: "Gastroenteritis",
+      probability: 80,
+      description: "Stomach infection causing nausea and vomiting",
+    },
+    {
+      condition: "Food Poisoning",
+      probability: 75,
+      description: "Contaminated food causing digestive upset",
+    },
+    {
+      condition: "Migraine",
+      probability: 60,
+      description: "Severe headache with nausea",
+    },
+  ],
+  "Shortness of Breath,Wheezing": [
+    {
+      condition: "Asthma",
+      probability: 80,
+      description: "Chronic respiratory condition with breathing difficulty",
+    },
+    {
+      condition: "Bronchitis",
+      probability: 65,
+      description: "Inflammation causing breathing problems",
+    },
+  ],
+  "Joint Pain,Muscle Pain": [
+    {
+      condition: "Arthritis",
+      probability: 70,
+      description: "Joint and muscle inflammation",
+    },
+    {
+      condition: "Fibromyalgia",
+      probability: 65,
+      description: "Chronic muscle and joint pain condition",
+    },
+  ],
+  "Blurred Vision,Headache": [
+    {
+      condition: "Migraine",
+      probability: 70,
+      description: "Headache with visual disturbances",
+    },
+    {
+      condition: "Eye Strain",
+      probability: 55,
+      description: "Tired eyes causing headache and blurred vision",
+    },
+  ],
+  "Chest Pain,Palpitations": [
+    {
+      condition: "Anxiety Attack",
+      probability: 65,
+      description: "Panic symptoms with chest discomfort",
+    },
+    {
+      condition: "Heart Arrhythmia",
+      probability: 55,
+      description: "Irregular heartbeat causing chest pain",
+    },
+  ],
+  "Loss of Appetite,Weight Loss": [
+    {
+      condition: "Depression",
+      probability: 65,
+      description: "Mental health condition affecting appetite",
+    },
+    {
+      condition: "Hyperthyroidism",
+      probability: 60,
+      description: "Overactive thyroid causing weight changes",
+    },
+    {
+      condition: "Cancer",
+      probability: 50,
+      description: "Serious condition requiring medical attention",
+    },
+  ],
+  "Sleep Issues,Fatigue": [
+    {
+      condition: "Insomnia",
+      probability: 70,
+      description: "Sleep disorder causing chronic fatigue",
+    },
+    {
+      condition: "Sleep Apnea",
+      probability: 65,
+      description: "Breathing disorder during sleep",
     },
   ],
 }
@@ -1106,6 +1231,217 @@ const TREATMENT_DATABASE: Record<string, Treatment> = {
       "Don't delay treatment",
     ],
   },
+  Dehydration: {
+    medicines: [
+      {
+        name: "Oral Rehydration Solution (ORS)",
+        dosage: "As directed",
+        frequency: "Every 15-30 minutes",
+        duration: "Until rehydrated",
+        sideEffects: "None when used as directed",
+      },
+      {
+        name: "Electrolyte Solutions",
+        dosage: "As needed",
+        frequency: "Throughout the day",
+        duration: "Until symptoms resolve",
+        sideEffects: "May cause mild stomach upset",
+      },
+    ],
+    homeRemedies: [
+      "Drink plenty of water (8-10 glasses daily)",
+      "Consume water-rich foods (watermelon, cucumber)",
+      "Drink coconut water",
+      "Avoid caffeine and alcohol",
+      "Eat bananas and oranges",
+      "Rest in cool environment",
+      "Monitor urine color (should be light yellow)",
+    ],
+    precautions: [
+      "Monitor fluid intake carefully",
+      "Avoid strenuous activity in hot weather",
+      "Check for signs of severe dehydration",
+      "Seek medical help if symptoms persist",
+      "Maintain electrolyte balance",
+      "Avoid sugary drinks",
+      "Stay in cool, shaded areas",
+      "Wear loose, light clothing",
+    ],
+    dos: [
+      "Do drink water regularly",
+      "Do consume electrolyte-rich foods",
+      "Do rest in cool places",
+      "Do monitor urine output",
+      "Do eat water-rich fruits",
+    ],
+    donts: [
+      "Don't ignore thirst",
+      "Don't consume alcohol",
+      "Don't exercise in extreme heat",
+      "Don't wait until severely thirsty",
+      "Don't ignore dark urine",
+    ],
+  },
+  "Low Blood Pressure": {
+    medicines: [
+      {
+        name: "Fludrocortisone",
+        dosage: "0.1-0.2mg",
+        frequency: "Once daily",
+        duration: "As prescribed",
+        sideEffects: "High blood pressure, swelling",
+      },
+      {
+        name: "Midodrine",
+        dosage: "2.5-10mg",
+        frequency: "Three times daily",
+        duration: "As prescribed",
+        sideEffects: "Goosebumps, urinary retention",
+      },
+    ],
+    homeRemedies: [
+      "Increase salt intake (with doctor's approval)",
+      "Stay well hydrated",
+      "Wear compression stockings",
+      "Avoid sudden position changes",
+      "Eat small, frequent meals",
+      "Limit alcohol consumption",
+      "Exercise regularly (with guidance)",
+    ],
+    precautions: [
+      "Monitor blood pressure regularly",
+      "Avoid prolonged standing",
+      "Be cautious when getting up",
+      "Maintain healthy diet",
+      "Manage stress levels",
+      "Get adequate sleep",
+      "Avoid hot showers",
+      "Consult doctor before starting exercise",
+    ],
+    dos: [
+      "Do rise slowly from sitting/lying",
+      "Do stay hydrated",
+      "Do eat regular meals",
+      "Do monitor blood pressure",
+      "Do exercise appropriately",
+    ],
+    donts: [
+      "Don't stand for long periods",
+      "Don't skip meals",
+      "Don't take hot baths",
+      "Don't ignore dizziness",
+      "Don't over-exercise",
+    ],
+  },
+  "Eye Strain": {
+    medicines: [
+      {
+        name: "Artificial Tears",
+        dosage: "1-2 drops",
+        frequency: "As needed",
+        duration: "Until symptoms resolve",
+        sideEffects: "Temporary blurring of vision",
+      },
+      {
+        name: "Lubricating Eye Drops",
+        dosage: "1-2 drops",
+        frequency: "4-6 times daily",
+        duration: "As needed",
+        sideEffects: "Minimal side effects",
+      },
+    ],
+    homeRemedies: [
+      "Follow 20-20-20 rule (every 20 minutes, look at something 20 feet away for 20 seconds)",
+      "Adjust screen brightness and contrast",
+      "Use proper lighting",
+      "Take regular breaks from screens",
+      "Blink frequently",
+      "Use anti-glare screens",
+      "Maintain proper posture",
+    ],
+    precautions: [
+      "Maintain proper screen distance (18-24 inches)",
+      "Ensure adequate lighting",
+      "Take regular breaks from digital devices",
+      "Keep screens clean",
+      "Use appropriate font sizes",
+      "Maintain good posture",
+      "Get regular eye exams",
+      "Stay hydrated",
+    ],
+    dos: [
+      "Do take screen breaks",
+      "Do maintain proper distance",
+      "Do use good lighting",
+      "Do blink regularly",
+      "Do get eye exams",
+    ],
+    donts: [
+      "Don't stare at screens continuously",
+      "Don't use devices in dark",
+      "Don't ignore eye discomfort",
+      "Don't use expired eye drops",
+      "Don't rub eyes excessively",
+    ],
+  },
+  Vertigo: {
+    medicines: [
+      {
+        name: "Meclizine",
+        dosage: "25-50mg",
+        frequency: "Every 6-8 hours",
+        duration: "As needed",
+        sideEffects: "Drowsiness, dry mouth",
+      },
+      {
+        name: "Dimenhydrinate",
+        dosage: "50mg",
+        frequency: "Every 4-6 hours",
+        duration: "As needed",
+        sideEffects: "Drowsiness, dizziness",
+      },
+      {
+        name: "Betahistine",
+        dosage: "8-16mg",
+        frequency: "Three times daily",
+        duration: "As prescribed",
+        sideEffects: "Nausea, headache",
+      },
+    ],
+    homeRemedies: [
+      "Practice Epley maneuver (for BPPV)",
+      "Stay hydrated",
+      "Avoid sudden head movements",
+      "Use supportive pillows",
+      "Practice balance exercises",
+      "Get adequate rest",
+      "Reduce salt intake",
+    ],
+    precautions: [
+      "Avoid driving if dizzy",
+      "Use handrails when walking",
+      "Avoid heights and ladders",
+      "Get up slowly from bed",
+      "Maintain regular sleep schedule",
+      "Avoid alcohol and caffeine",
+      "Stay physically active",
+      "Monitor symptoms carefully",
+    ],
+    dos: [
+      "Do move slowly and carefully",
+      "Do use support when walking",
+      "Do stay hydrated",
+      "Do practice balance exercises",
+      "Do rest when dizzy",
+    ],
+    donts: [
+      "Don't drive when dizzy",
+      "Don't look up suddenly",
+      "Don't ignore severe symptoms",
+      "Don't consume alcohol",
+      "Don't skip meals",
+    ],
+  },
 }
 
 interface Treatment {
@@ -1152,6 +1488,13 @@ export default function SymptomAnalyzer() {
     if (DIAGNOSIS_DATABASE[exactKey]) {
       setDiagnosisResults(DIAGNOSIS_DATABASE[exactKey])
       setSelectedCondition(null)
+      // Scroll to results after a brief delay to allow DOM update
+      setTimeout(() => {
+        const resultsElement = document.getElementById('diagnosis-results')
+        if (resultsElement) {
+          resultsElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        }
+      }, 100)
       return
     }
 
@@ -1178,6 +1521,25 @@ export default function SymptomAnalyzer() {
       }
     })
 
+    // If still no results, try individual symptom matching
+    if (allResults.length === 0) {
+      selectedSymptomNames.forEach((symptom) => {
+        if (DIAGNOSIS_DATABASE[symptom]) {
+          DIAGNOSIS_DATABASE[symptom].forEach((result) => {
+            const existingResult = allResults.find((r) => r.condition === result.condition)
+            if (existingResult) {
+              existingResult.probability = Math.max(existingResult.probability, result.probability * 0.8)
+            } else {
+              allResults.push({
+                ...result,
+                probability: result.probability * 0.8,
+              })
+            }
+          })
+        }
+      })
+    }
+
     // Sort by probability and remove duplicates
     const uniqueResults = Array.from(new Map(allResults.map((r) => [r.condition, r])).values())
       .sort((a, b) => b.probability - a.probability)
@@ -1185,6 +1547,14 @@ export default function SymptomAnalyzer() {
 
     setDiagnosisResults(uniqueResults.length > 0 ? uniqueResults : [])
     setSelectedCondition(null)
+
+    // Scroll to results after a brief delay to allow DOM update
+    setTimeout(() => {
+      const resultsElement = document.getElementById('diagnosis-results')
+      if (resultsElement) {
+        resultsElement.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
+    }, 100)
   }
 
   const getTreatment = (condition: string): Treatment | null => {
@@ -1330,11 +1700,19 @@ export default function SymptomAnalyzer() {
                 <button
                   onClick={analyzeSymptoms}
                   disabled={selectedSymptoms.length === 0}
-                  className="w-full bg-gradient-to-r from-primary via-primary to-secondary text-white py-4 px-6 rounded-2xl font-bold text-base shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-md group relative overflow-hidden"
+                  style={{
+                    padding: '6px 12px',
+                    borderRadius: '6px',
+                    fontSize: '12px',
+                    fontWeight: '500',
+                    boxShadow: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+                    width: 'auto',
+                    minWidth: '160px'
+                  }}
+                  className="bg-gradient-to-r from-primary via-primary to-secondary text-white shadow-sm hover:shadow-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-none"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                  <span className="relative flex items-center justify-center gap-2">
-                    <Zap className="w-5 h-5" />
+                  <span className="flex items-center justify-center gap-1.5">
+                    <Zap className="w-3 h-3" />
                     Analyze Symptoms
                   </span>
                 </button>
@@ -1373,7 +1751,7 @@ export default function SymptomAnalyzer() {
           <div className="space-y-6">
             {/* Diagnosis Results */}
             {diagnosisResults.length > 0 && (
-              <div className="bg-card rounded-2xl shadow-lg p-6 border border-border">
+              <div id="diagnosis-results" className="bg-card rounded-2xl shadow-lg p-6 border border-border">
                 <div className="flex items-center gap-2 mb-6">
                   <AlertCircle className="w-6 h-6 text-primary" />
                   <h2 className="text-2xl font-bold text-foreground">Possible Conditions</h2>
