@@ -1,7 +1,9 @@
 # MedGuide
 
 Smart Analysis is an AI-powered healthcare platform designed to help users better understand their health through symptom-based analysis, medication management, condition tracking, and personalized healthcare insights. The platform provides a modern and intuitive experience for managing daily health routines and accessing important medical information.
-
+<p align="center">
+  <img src="https://res.cloudinary.com/dx9bvma03/image/upload/v1783266859/Screenshot_2026-07-05_212308_ltqfjy.png" alt="MedGuide Preview" width="70%">
+</p>
 ## Overview
 
 Smart Analysis enables users to:
